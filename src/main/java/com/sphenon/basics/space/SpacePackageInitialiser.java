@@ -1,7 +1,7 @@
 package com.sphenon.basics.space;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -37,7 +37,7 @@ public class SpacePackageInitialiser {
 
             Configuration.loadDefaultProperties(context, com.sphenon.basics.space.SpacePackageInitialiser.class);
 
-            Expression.setExpressionEvaluatorServiceLocator(context, new ExpressionEvaluatorServiceLocator_Space(context));
+            Expression.registerExpressionEvaluatorServiceLocator(context, new ExpressionEvaluatorServiceLocator_Space(context));
         }
     }
 

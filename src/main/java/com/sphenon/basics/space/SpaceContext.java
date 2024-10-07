@@ -1,7 +1,7 @@
 package com.sphenon.basics.space;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -49,22 +49,22 @@ public class SpaceContext extends SpecificContext {
         super(context);
     }
 
-    protected Space xspace;
+    protected Space space;
 
-    public void setXspace(CallContext context, Space xspace) {
-        this.xspace = xspace;
+    public void setSpace(CallContext context, Space space) {
+        this.space = space;
     }
 
-    public Space getXspace(CallContext cc) {
+    public Space getSpace(CallContext cc) {
         SpaceContext space_context;
         Space result;
-        return (this.xspace != null ?
-                     this.xspace
+        return (this.space != null ?
+                     this.space
                   : (    (space_context = (SpaceContext) this.getLocationContext(SpaceContext.class)) != null
-                      && (result = space_context.getXspace(cc)) != null
+                      && (result = space_context.getSpace(cc)) != null
                     ) ? result
                   : (    (space_context = (SpaceContext) this.getCallContext(SpaceContext.class)) != null
-                      && (result = space_context.getXspace(cc)) != null
+                      && (result = space_context.getSpace(cc)) != null
                     ) ? result
                   : null
                );
@@ -84,7 +84,7 @@ public class SpaceContext extends SpecificContext {
 
     static public Space getSpaceFromContext(CallContext context) {
         SpaceContext space_context = SpaceContext.get((Context) context);
-        Space rs = space_context == null ? null : space_context.getXspace(context);
+        Space rs = space_context == null ? null : space_context.getSpace(context);
         return rs != null ? rs : root_space != null ? root_space : root_space_ds != null ? (root_space = root_space_ds.get(context)) : null;
     }
 

@@ -1,0 +1,16 @@
+<Space CLASS="com.sphenon.basics.space.Space" xmlns="http://xmlns.sphenon.com/com/sphenon/basics/space" xmlns:code="code">
+  <Id>main</Id>
+  <Name>The Master of all Spaces</Name>
+  <SubSpace>
+    <Id>sub1</Id>
+    <Name>Subspace 1</Name>
+  </SubSpace>
+  <SuperSpace>
+    <Id>super1</Id>
+    <Name>Superspace 1</Name>
+  </SuperSpace>
+  <KnownSpace>
+    <Id>known1</Id>
+    <Name>Known Space 1</Name>
+  </KnownSpace>
+</Space>
